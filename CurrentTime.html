@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Current Time</title>
+    <script>
+        function updateTime() {
+            var now = new Date();
+            var hours = String(now.getHours()).padStart(2, '0');
+            var minutes = String(now.getMinutes()).padStart(2, '0');
+            var seconds = String(now.getSeconds()).padStart(2, '0');
+            var timeString = hours + ":" + minutes + ":" + seconds;
+            document.getElementById('clock').innerText = timeString;
+        }
+        setInterval(updateTime, 1000);
+    </script>
+    <style>
+        #clock {
+            font-size: 2em;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body onload="updateTime()">
+    <div id="clock"></div>
+</body>
+</html>
